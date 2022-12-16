@@ -29,8 +29,8 @@ namespace GestaoDeDesenvolvedores
                 administradorPadrao.Nome = "Admin";
 
                 Credencial credencialPadrao = new Credencial();
-                credencialPadrao.Email = "admin@mail.com";
-                credencialPadrao.Senha = "xyz098";
+                credencialPadrao.Email = "caetano@bl.com";
+                credencialPadrao.Senha = "banca";
                 credencialPadrao.Administrador = true;
 
                 credencialPadrao.Desenvolvedor = administradorPadrao;

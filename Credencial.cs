@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace GestaoDeDesenvolvedores
 {
+    [Table("tbl_credencial")]
     public class Credencial
     {
         // Primary key equal to User's foreign key - One-To-One Relationship
         public Int64 Id { get; set; }
-
         public const String SALT = "1FnM6_";
-
         //[Required]
         [Index(IsUnique = true)]
         [StringLength(250)]
@@ -46,6 +45,8 @@ namespace GestaoDeDesenvolvedores
         // and Credencial is *dependent*
         [Required]
         public Desenvolvedor Desenvolvedor { get; set; }
+        public Credencial(){}
+
 
 
         #region Hashing

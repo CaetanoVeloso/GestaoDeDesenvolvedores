@@ -8,21 +8,24 @@ using System.Threading.Tasks;
 
 namespace GestaoDeDesenvolvedores
 {
+    [Table("tbl_desenvolvedor")]
     public class Desenvolvedor
     {
-        public Int32 Id { get; set; }
+        public Int64 Id { get; set; }
 
-        // Not null property
         [Required]
-        // Maximum length value
         [StringLength(45)]
         public String Nome { get; set; }
+        public Credencial Credencial { get; set; }
+        public Desenvolvedor()
+        {
+
+        }
 
         // Not null property
         [Required]
         // Maximum length value
         [StringLength(255)]
-        public Credencial Credencial { get; set; }
 
         private DateTime _nascimento;
 
