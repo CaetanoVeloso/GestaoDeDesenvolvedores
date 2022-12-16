@@ -9,7 +9,7 @@ namespace GestaoDeDesenvolvedores
 {
     internal class DevRepository
     {
-        public static void Save(Desenvolvedor usuario)
+        public static void Save(Developer usuario)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace GestaoDeDesenvolvedores
             }
         }
 
-        public static List<Desenvolvedor> FindAll()
+        public static List<Developer> FindAll()
         {
             try
             {
@@ -49,7 +49,7 @@ namespace GestaoDeDesenvolvedores
             }
         }
 
-        public static Desenvolvedor FindById(Int64 id)
+        public static Developer FindById(Int64 id)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace GestaoDeDesenvolvedores
             }
         }
 
-        public static Desenvolvedor FindByIdWCredencial(Int64 id)
+        public static Developer FindByIdWCredencial(Int64 id)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace GestaoDeDesenvolvedores
                     return dbContext.Desenvolvedores
                         .Include("Credencial")
                         .Where(u => u.Id == id)
-                        .FirstOrDefault<Desenvolvedor>();
+                        .FirstOrDefault<Developer>();
                 }
             }
             catch (Exception)
@@ -82,7 +82,7 @@ namespace GestaoDeDesenvolvedores
             }
         }
 
-        public static List<Desenvolvedor> FindByPartialName(String partialName)
+        public static List<Developer> FindByPartialName(String partialName)
         {
             try
             {
@@ -90,7 +90,7 @@ namespace GestaoDeDesenvolvedores
                 {
                     return dbContext.Desenvolvedores
                         .Where(u => u.Nome.Contains(partialName))
-                        .ToList<Desenvolvedor>();
+                        .ToList<Developer>();
                 }
             }
             catch (Exception)
@@ -99,7 +99,7 @@ namespace GestaoDeDesenvolvedores
             }
         }
 
-        public static void Remove(Desenvolvedor usuario)
+        public static void Remove(Developer usuario)
         {
             try
             {

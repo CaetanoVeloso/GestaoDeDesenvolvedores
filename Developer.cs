@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace GestaoDeDesenvolvedores
 {
-    [Table("tbl_desenvolvedor")]
-    public class Desenvolvedor
+    [Table("tbdeveloper")]
+    public class Developer
     {
         public Int64 Id { get; set; }
-
         [Required]
         [StringLength(45)]
         public String Nome { get; set; }
-        public Credencial Credencial { get; set; }
-        public Desenvolvedor()
+        public Char nivel { get; set; }
+        public Credential Credencial { get; set; }
+        public Developer()
         {
 
         }

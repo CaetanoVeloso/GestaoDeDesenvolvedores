@@ -13,8 +13,8 @@ namespace GestaoDeDesenvolvedores
     {
         private static MySqlConnection _databaseConnection;
 
-        public DbSet<Desenvolvedor> Desenvolvedores { get; set; }
-        public DbSet<Credencial> Credenciais { get; set; }
+        public DbSet<Developer> Desenvolvedores { get; set; }
+        public DbSet<Credential> Credenciais { get; set; }
 
         public Repository() : base(GetDbConnection(), false)
         {
@@ -25,10 +25,10 @@ namespace GestaoDeDesenvolvedores
                 Repository repository = this;
 
                 // ... insert a default administrator
-                Desenvolvedor administradorPadrao = new Desenvolvedor();
-                administradorPadrao.Nome = "Admin";
+                Developer administradorPadrao = new Developer();
+                administradorPadrao.Nome = "DevCaetano";
 
-                Credencial credencialPadrao = new Credencial();
+                Credential credencialPadrao = new Credential();
                 credencialPadrao.Email = "caetano@bl.com";
                 credencialPadrao.Senha = "banca";
                 credencialPadrao.Administrador = true;
@@ -40,27 +40,6 @@ namespace GestaoDeDesenvolvedores
                 repository.SaveChanges();
             }
         }
-        public static Credencial Autenticar(Credencial usuario)
-        {
-            using (var contextoBd = new Repository())
-            {
-                // EF 6
-                return contextoBd.Credenciais
-                    .Where(u =>
-                        u.Email == usuario.Email
-                        && u.Senha == usuario.Senha)
-                    .SingleOrDefault();
-
-                // LINQ
-                //return (Usuario)
-                //    from u
-                //    in contextoBd.Usuarios
-                //    where u.Nome == usuario.Nome
-                //        && u.Senha == usuario.Senha
-                //    select u;
-            }
-        }
-
         public static MySqlConnection GetDbConnection()
         {
             if (_databaseConnection == null)

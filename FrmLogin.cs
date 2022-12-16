@@ -41,8 +41,8 @@ namespace GestaoDeDesenvolvedores
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Autentica usuário
-            Credencial usuario = Repository.Autenticar(
-                new Credencial()
+            Credential usuario = CredentialRepository.Autenticar(
+                new Credential()
                 {
                     Email = txtMail.Text,
                     Senha = txtPass.Text
@@ -77,7 +77,11 @@ namespace GestaoDeDesenvolvedores
 
                 // Ao invés de uma mensagem, pode ser usado um rótulo na
                 // GUI para indicar que a autenticação não foi realizada
-                MessageBox.Show("Usuário e/ou senha inválidos!\nTente novamente", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblMail.Text = "Email: Email or password is invalid.";
+                lblMail.ForeColor = Color.FromArgb(245,151,148);
+                lblPass.Text = "Password: Email or password is invalid.";
+                lblPass.ForeColor = Color.FromArgb(245, 151, 148);
+                //MessageBox.Show("Password - Login or password is invalid.", "GestãoDev's", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

@@ -100,8 +100,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Credencial.cs" />
-    <Compile Include="Desenvolvedor.cs" />
+    <Compile Include="Credential.cs" />
+    <Compile Include="CredentialRepository.cs" />
+    <Compile Include="Developer.cs" />
     <Compile Include="DevRepository.cs" />
     <Compile Include="FrmDevCreate.cs">
       <SubType>Form</SubType>
@@ -128,6 +129,8 @@
       <DependentUpon>FrmSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <EmbeddedResource Include="FrmDevCreate.resx">

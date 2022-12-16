@@ -19,8 +19,8 @@ namespace GestaoDeDesenvolvedores
         
 
         // Dados do usuário acessado
-        private Credencial _usuarioLogado;
-        public Credencial DesenvolvedorLogado
+        private Credential _usuarioLogado;
+        public Credential DesenvolvedorLogado
         {
             get { return _instance._usuarioLogado; }
             set
@@ -48,30 +48,6 @@ namespace GestaoDeDesenvolvedores
             }
             return _instance;
         }
-        //Mudar Fundo Menu
-        public class submenuColorTable : ProfessionalColorTable
-        {
-            public override Color MenuItemSelected
-            {
-                get { return ColorTranslator.FromHtml("#302E2D"); }
-            }
-
-            public override Color MenuItemBorder
-            {
-                get { return Color.Silver; }
-            }
-
-            public override Color ToolStripDropDownBackground
-            {
-                get { return ColorTranslator.FromHtml("#21201F"); }
-            }
-
-            public override Color ToolStripContentPanelGradientBegin
-            {
-                get { return ColorTranslator.FromHtml("#21201F"); }
-            }
-        }
-
         #region Fechamento da janela
         private void FrmSystem_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -106,6 +82,22 @@ namespace GestaoDeDesenvolvedores
         private void desenvolvedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmDevCreate.GetInstance().Show();
+        }
+
+        private void FrmSystem_Load(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                // #2
+                MdiClient client = control as MdiClient;
+                if (!(client == null))
+                {
+                    // #3
+                    client.BackColor = Color.FromArgb(54, 57, 63);
+                    // 4#
+                    break;
+                }
+            }
         }
     }
 }

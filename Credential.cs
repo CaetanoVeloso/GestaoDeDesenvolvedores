@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace GestaoDeDesenvolvedores
 {
-    [Table("tbl_credencial")]
-    public class Credencial
+    [Table("tbcredential")]
+    public class Credential
     {
         // Primary key equal to User's foreign key - One-To-One Relationship
         public Int64 Id { get; set; }
@@ -26,8 +26,6 @@ namespace GestaoDeDesenvolvedores
         [StringLength(64)]
         public String Senha
         {
-
-
             get
             {
                 return _senha;
@@ -44,8 +42,8 @@ namespace GestaoDeDesenvolvedores
         // Usuario is the *principal* / REQUIRED
         // and Credencial is *dependent*
         [Required]
-        public Desenvolvedor Desenvolvedor { get; set; }
-        public Credencial(){}
+        public Developer Desenvolvedor { get; set; }
+        public Credential() { }
 
 
 
