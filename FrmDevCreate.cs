@@ -19,15 +19,25 @@ namespace GestaoDeDesenvolvedores
         }
         public static FrmDevCreate GetInstance()
         {
-            if (_instance == null
-                // Quando esta janela é fechada, a sua
-                // instância persiste em um estado inacessível
-                // devendo ser recriada
-                || (_instance != null && _instance.IsDisposed))
+            if (_instance == null || _instance.IsDisposed)
             {
                 _instance = new FrmDevCreate();
             }
             return _instance;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Developer newDev = new Developer();
+            Credential newCred = new Credential();
+            newDev.Nome = txtNome.Text;
+            newCred.Email = txtMail.Text;
+            newCred.Senha = txtPass.Text;
+            newCred.Administrador = chkAdm.Checked;
+            newCred.Desenvolvedor = newDev;
+            newDev.Credencial = newCred;
+            DevRepository.Save(newDev);
+            CredentialRepository.Save(newCred);
         }
     }
 }

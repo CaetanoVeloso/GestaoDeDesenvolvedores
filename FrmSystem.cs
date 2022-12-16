@@ -88,13 +88,10 @@ namespace GestaoDeDesenvolvedores
         {
             foreach (Control control in this.Controls)
             {
-                // #2
                 MdiClient client = control as MdiClient;
                 if (!(client == null))
                 {
-                    // #3
                     client.BackColor = Color.FromArgb(54, 57, 63);
-                    // 4#
                     break;
                 }
             }

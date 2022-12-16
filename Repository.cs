@@ -15,6 +15,7 @@ namespace GestaoDeDesenvolvedores
 
         public DbSet<Developer> Desenvolvedores { get; set; }
         public DbSet<Credential> Credenciais { get; set; }
+        public DbSet<Project> Projetos { get; set; }
 
         public Repository() : base(GetDbConnection(), false)
         {

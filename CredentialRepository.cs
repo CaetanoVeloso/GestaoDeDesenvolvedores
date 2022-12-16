@@ -9,24 +9,38 @@ namespace GestaoDeDesenvolvedores
 {
     internal class CredentialRepository
     {
+        public static void Save(Credential cred)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    if (cred.Id == 0)
+                    {
+                        dbContext.Credenciais.Add(cred);
+                    }
+                    else
+                    {
+                        dbContext.Entry(cred).State
+                            = EntityState.Modified;
+                    }
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static Credential Autenticar(Credential usuario)
         {
             using (Repository dbContext = new Repository())
             {
-                // EF 6
                 return dbContext.Credenciais
                     .Where(u =>
                         u.Email == usuario.Email
                         && u.Senha == usuario.Senha)
                     .SingleOrDefault();
-
-                // LINQ
-                //return (Usuario)
-                //    from u
-                //    in contextoBd.Usuarios
-                //    where u.Nome == usuario.Nome
-                //        && u.Senha == usuario.Senha
-                //    select u;
             }
         }
     }

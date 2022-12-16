@@ -17,16 +17,9 @@ namespace GestaoDeDesenvolvedores
         public String Nome { get; set; }
         public Char nivel { get; set; }
         public Credential Credencial { get; set; }
-        public Developer()
-        {
-
-        }
-
-        // Not null property
+        public Developer(){}
         [Required]
-        // Maximum length value
         [StringLength(255)]
-
         private DateTime _nascimento;
 
         // Only date in database
@@ -46,8 +39,6 @@ namespace GestaoDeDesenvolvedores
                 _nascimento = value;
             }
         }
-
-        // Transient property
         [NotMapped]
         public Byte Idade { get; private set; }
 
