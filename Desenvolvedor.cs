@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GestaoDeDesenvolvedores
 {
-    internal class Desenvolvedor
+    public class Desenvolvedor
     {
         public Int32 Id { get; set; }
 
@@ -22,13 +22,7 @@ namespace GestaoDeDesenvolvedores
         [Required]
         // Maximum length value
         [StringLength(255)]
-        public String Email { get; set; }
-
-        // Not null property
-        [Required]
-        // Maximum length value
-        [StringLength(32)]
-        public String Senha { get; set; }
+        public Credencial Credencial { get; set; }
 
         private DateTime _nascimento;
 
@@ -58,7 +52,7 @@ namespace GestaoDeDesenvolvedores
         {
             return "[" + Id.ToString("00000") + "] "
                 + Nome
-                + " (" + Email + ") "
+                + " (" + Credencial.Email + ") "
                 //+ ", " + Senha 
                 + Nascimento.ToString("dd/MM/yyyy")
                 + " - " + Idade + " anos";

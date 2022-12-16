@@ -1,6 +1,6 @@
 ﻿namespace GestaoDeDesenvolvedores
 {
-    partial class Login
+    partial class FrmSystem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.SuspendLayout();
             // 
-            // Login
+            // FrmSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Login";
-            this.Text = "GestãoDeDesenvolvedores";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IsMdiContainer = true;
+            this.Name = "FrmSystem";
+            this.Text = "FrmSystem";
             this.ResumeLayout(false);
 
         }
@@ -46,4 +46,3 @@
         #endregion
     }
 }
-

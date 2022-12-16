@@ -13,7 +13,8 @@ namespace GestaoDeDesenvolvedores
     {
         private static MySqlConnection _databaseConnection;
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Desenvolvedor> Desenvolvedores { get; set; }
+        public DbSet<Credencial> Credenciais { get; set; }
 
         public Repository() : base(GetDbConnection(), false)
         {
@@ -21,10 +22,10 @@ namespace GestaoDeDesenvolvedores
             if (Database.CreateIfNotExists())
             {
                 // ... and...
-                Repository repositorio = this;
+                Repository repository = this;
 
                 // ... insert a default administrator
-                Usuario administradorPadrao = new Usuario();
+                Desenvolvedor administradorPadrao = new Desenvolvedor();
                 administradorPadrao.Nome = "Admin";
 
                 Credencial credencialPadrao = new Credencial();
@@ -32,11 +33,31 @@ namespace GestaoDeDesenvolvedores
                 credencialPadrao.Senha = "xyz098";
                 credencialPadrao.Administrador = true;
 
-                credencialPadrao.Usuario = administradorPadrao;
+                credencialPadrao.Desenvolvedor = administradorPadrao;
                 administradorPadrao.Credencial = credencialPadrao;
 
-                repositorio.Usuarios.Add(administradorPadrao);
-                repositorio.SaveChanges();
+                repository.Desenvolvedores.Add(administradorPadrao);
+                repository.SaveChanges();
+            }
+        }
+        public static Credencial Autenticar(Credencial usuario)
+        {
+            using (var contextoBd = new Repository())
+            {
+                // EF 6
+                return contextoBd.Credenciais
+                    .Where(u =>
+                        u.Email == usuario.Email
+                        && u.Senha == usuario.Senha)
+                    .SingleOrDefault();
+
+                // LINQ
+                //return (Usuario)
+                //    from u
+                //    in contextoBd.Usuarios
+                //    where u.Nome == usuario.Nome
+                //        && u.Senha == usuario.Senha
+                //    select u;
             }
         }
 
@@ -44,7 +65,7 @@ namespace GestaoDeDesenvolvedores
         {
             if (_databaseConnection == null)
             {
-                String connectionString = ConfigurationManager.ConnectionStrings["ProgVisConnectionString"].ConnectionString;
+                String connectionString = ConfigurationManager.ConnectionStrings["GestDevBD"].ConnectionString;
                 _databaseConnection = new MySqlConnection(connectionString);
             }
             return _databaseConnection;
