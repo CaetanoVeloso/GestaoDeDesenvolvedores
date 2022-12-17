@@ -15,10 +15,13 @@ namespace GestaoDeDesenvolvedores
         [Required]
         [StringLength(45)]
         public String Name { get; set; }
+        [Required]
         [Column(TypeName = "Date")]
         public DateTime inicio { get; set; }
+        [Required]
         [Column(TypeName = "Date")]
         public DateTime terminoPlanejado { get; set; }
+        [Required]
         [Column(TypeName = "Date")]
         public DateTime termino { get; set; }
     }

@@ -19,23 +19,20 @@ namespace GestaoDeDesenvolvedores
 
         public Repository() : base(GetDbConnection(), false)
         {
-            // If database not exists, create it ...
             if (Database.CreateIfNotExists())
             {
-                // ... and...
                 Repository repository = this;
-
-                // ... insert a default administrator
                 Developer administradorPadrao = new Developer();
                 administradorPadrao.Nome = "DevCaetano";
-
+                administradorPadrao.Nascimento = new DateTime(2004, 7, 15);
+                administradorPadrao.nivel = 'S';
                 Credential credencialPadrao = new Credential();
                 credencialPadrao.Email = "caetano@bl.com";
                 credencialPadrao.Senha = "banca";
                 credencialPadrao.Administrador = true;
 
-                credencialPadrao.Desenvolvedor = administradorPadrao;
-                administradorPadrao.Credencial = credencialPadrao;
+                credencialPadrao.Developer = administradorPadrao;
+                administradorPadrao.Credential = credencialPadrao;
 
                 repository.Desenvolvedores.Add(administradorPadrao);
                 repository.SaveChanges();

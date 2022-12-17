@@ -12,22 +12,20 @@ namespace GestaoDeDesenvolvedores
 {
     public partial class FrmSystem : Form
     {
-        private static FrmSystem _instance;   
-        private Credential _usuarioLogado;
-        public Credential DesenvolvedorLogado
+        private static FrmSystem _instance;
+        private Credential _devLogado;
+        public Credential DevLogado
         {
-            get { return _instance._usuarioLogado; }
+            get { return _instance._devLogado; }
             set
             {
-                _instance._usuarioLogado = value;
+                _instance._devLogado = value;
             }
         }
-
         private FrmSystem()
         {
             InitializeComponent();
         }
-
         public static FrmSystem GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
@@ -53,6 +51,18 @@ namespace GestaoDeDesenvolvedores
 
         private void FrmSystem_Load(object sender, EventArgs e)
         {
+            if (DevLogado.Administrador)
+            {
+                menuStrip1.Enabled = true;
+                projetoToolStripMenuItem.Enabled = true;
+                desenvolvedorToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                menuStrip1.Enabled = true;
+                projetoToolStripMenuItem.Enabled = false;
+                desenvolvedorToolStripMenuItem.Enabled = false;
+            }
             foreach (Control control in this.Controls)
             {
                 MdiClient client = control as MdiClient;

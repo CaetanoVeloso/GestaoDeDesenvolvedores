@@ -14,10 +14,11 @@ namespace GestaoDeDesenvolvedores
     {
         public Int64 Id { get; set; }
         public const String SALT = "1FnM6_";
-        //[Required]
+        [Required]
         [Index(IsUnique = true)]
         [StringLength(250)]
         public String Email { get; set; }
+        public bool Administrador { get; set; }
         private String _senha;
         [Required]
         [StringLength(64)]
@@ -32,10 +33,8 @@ namespace GestaoDeDesenvolvedores
                 _senha = ComputeSHA256(value, SALT);
             }
         }
-
-        public bool Administrador { get; set; }
         [Required]
-        public Developer Desenvolvedor { get; set; }
+        public Developer Developer { get; set; }
         public Credential() { }
 
         public static String ComputeSHA256(String input)
@@ -64,7 +63,7 @@ namespace GestaoDeDesenvolvedores
                 + ", " + Email
                 + ", " + Senha
                 + ", " + (Administrador ? "Administrador" : "Usuário comum")
-                + ", Usuário: " + Desenvolvedor?.Id;
+                + ", Usuário: " + Developer?.Id;
         }
     }
 }

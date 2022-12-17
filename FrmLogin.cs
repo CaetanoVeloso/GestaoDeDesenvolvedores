@@ -38,7 +38,7 @@ namespace GestaoDeDesenvolvedores
                 txtPass.Text = null;
                 this.Hide();
                 FrmSystem frmSystem = FrmSystem.GetInstance();
-                frmSystem.DesenvolvedorLogado = dev;
+                frmSystem.DevLogado = dev;
                 frmSystem.Show();
             }
             else
@@ -52,6 +52,11 @@ namespace GestaoDeDesenvolvedores
                 lblPass.ForeColor = Color.FromArgb(245, 151, 148);
                 //MessageBox.Show("Password - Login or password is invalid.", "GestãoDev's", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

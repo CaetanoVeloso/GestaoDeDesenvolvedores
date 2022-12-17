@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProjCreate));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtIni = new System.Windows.Forms.DateTimePicker();
+            this.dtTp = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
             this.dtT = new System.Windows.Forms.DateTimePicker();
             this.lblCreate = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNasc = new System.Windows.Forms.Label();
             this.lblTermP = new System.Windows.Forms.Label();
             this.lblIni = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.dtTp = new System.Windows.Forms.DateTimePicker();
-            this.dtIni = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(436, 330);
             this.panel1.TabIndex = 1;
+            // 
+            // dtIni
+            // 
+            this.dtIni.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.dtIni.Location = new System.Drawing.Point(31, 132);
+            this.dtIni.Name = "dtIni";
+            this.dtIni.Size = new System.Drawing.Size(370, 26);
+            this.dtIni.TabIndex = 15;
+            // 
+            // dtTp
+            // 
+            this.dtTp.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.dtTp.Location = new System.Drawing.Point(31, 185);
+            this.dtTp.Name = "dtTp";
+            this.dtTp.Size = new System.Drawing.Size(370, 26);
+            this.dtTp.TabIndex = 14;
             // 
             // btnSave
             // 
@@ -95,6 +111,17 @@
             this.lblCreate.Size = new System.Drawing.Size(303, 35);
             this.lblCreate.TabIndex = 8;
             this.lblCreate.Text = "Create new Project";
+            // 
+            // txtNome
+            // 
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtNome.Location = new System.Drawing.Point(31, 79);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(370, 26);
+            this.txtNome.TabIndex = 5;
             // 
             // lblNasc
             // 
@@ -140,33 +167,6 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name:";
             // 
-            // txtNome
-            // 
-            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtNome.Location = new System.Drawing.Point(31, 79);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(370, 26);
-            this.txtNome.TabIndex = 5;
-            // 
-            // dtTp
-            // 
-            this.dtTp.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-            this.dtTp.Location = new System.Drawing.Point(31, 185);
-            this.dtTp.Name = "dtTp";
-            this.dtTp.Size = new System.Drawing.Size(370, 26);
-            this.dtTp.TabIndex = 14;
-            // 
-            // dtIni
-            // 
-            this.dtIni.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-            this.dtIni.Location = new System.Drawing.Point(31, 132);
-            this.dtIni.Name = "dtIni";
-            this.dtIni.Size = new System.Drawing.Size(370, 26);
-            this.dtIni.TabIndex = 15;
-            // 
             // FrmProjCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +174,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(463, 352);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProjCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

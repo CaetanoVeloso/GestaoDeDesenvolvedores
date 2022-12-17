@@ -15,14 +15,13 @@ namespace GestaoDeDesenvolvedores
         [Required]
         [StringLength(45)]
         public String Nome { get; set; }
-        public Char nivel { get; set; }
-        public Credential Credencial { get; set; }
-        public Developer(){}
         [Required]
-        [StringLength(255)]
-        private DateTime _nascimento;
+        public Char nivel { get; set; }
+        [Required]
         [Column(TypeName = "Date")]
         public DateTime Nascimento { get; set; }
+        public Credential Credential { get; set; }
+        public Developer(){}
     }
 }
 

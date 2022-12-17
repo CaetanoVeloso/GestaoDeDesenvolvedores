@@ -107,13 +107,6 @@ namespace GestaoDeDesenvolvedores
                 {
                     dbContext.Desenvolvedores.Attach(usuario);
                     dbContext.Desenvolvedores.Remove(usuario);
-
-                    // OR
-
-                    // But cascade delete fails...
-                    //dbContext.Entry(usuario).State
-                    //    = EntityState.Deleted;
-
                     dbContext.SaveChanges();
                 }
             }

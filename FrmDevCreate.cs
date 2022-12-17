@@ -17,7 +17,9 @@ namespace GestaoDeDesenvolvedores
         public FrmDevCreate()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
         }
+
         public static FrmDevCreate GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
@@ -32,16 +34,18 @@ namespace GestaoDeDesenvolvedores
             Developer newDev = new Developer();
             Credential newCred = new Credential();
             newDev.Nome = txtNome.Text;
+            newDev.Nascimento = dtBirth.Value;
+            newDev.nivel = Convert.ToChar(comboBox1.Text);
             newCred.Email = txtMail.Text;
             newCred.Senha = txtPass.Text;
             newCred.Administrador = chkAdm.Checked;
-            newCred.Desenvolvedor = newDev;
-            newDev.Credencial = newCred;
+            newCred.Developer = newDev;
+            newDev.Credential = newCred;
             DevRepository.Save(newDev);
             CredentialRepository.Save(newCred);
             lblCreate.Text = "Account Created!";
             lblCreate.ForeColor = Color.FromArgb(115, 194, 171);
-            MessageBox.Show("Project Created!", "GestãoDev's", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Account Created!", "GestãoDev's", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }
