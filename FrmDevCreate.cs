@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -38,6 +39,10 @@ namespace GestaoDeDesenvolvedores
             newDev.Credencial = newCred;
             DevRepository.Save(newDev);
             CredentialRepository.Save(newCred);
+            lblCreate.Text = "Account Created!";
+            lblCreate.ForeColor = Color.FromArgb(115, 194, 171);
+            MessageBox.Show("Project Created!", "GestãoDev's", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }

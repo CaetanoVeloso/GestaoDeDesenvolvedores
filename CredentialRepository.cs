@@ -32,14 +32,13 @@ namespace GestaoDeDesenvolvedores
                 throw;
             }
         }
-        public static Credential Autenticar(Credential usuario)
+
+        public static Credential Autenticar(Credential cred)
         {
             using (Repository dbContext = new Repository())
             {
                 return dbContext.Credenciais
-                    .Where(u =>
-                        u.Email == usuario.Email
-                        && u.Senha == usuario.Senha)
+                    .Where(cr => cr.Email == cred.Email && cr.Senha == cred.Senha)
                     .SingleOrDefault();
             }
         }

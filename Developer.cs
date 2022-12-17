@@ -21,36 +21,8 @@ namespace GestaoDeDesenvolvedores
         [Required]
         [StringLength(255)]
         private DateTime _nascimento;
-
-        // Only date in database
         [Column(TypeName = "Date")]
-        public DateTime Nascimento
-        {
-            get
-            {
-                return _nascimento;
-            }
-            set
-            {
-                Byte idade = (Byte)(DateTime.Now.Year - value.Year);
-                if (value.AddYears(idade) > DateTime.Now) { idade--; }
-                Idade = idade;
-
-                _nascimento = value;
-            }
-        }
-        [NotMapped]
-        public Byte Idade { get; private set; }
-
-        public override string ToString()
-        {
-            return "[" + Id.ToString("00000") + "] "
-                + Nome
-                + " (" + Credencial.Email + ") "
-                //+ ", " + Senha 
-                + Nascimento.ToString("dd/MM/yyyy")
-                + " - " + Idade + " anos";
-        }
+        public DateTime Nascimento { get; set; }
     }
 }
 

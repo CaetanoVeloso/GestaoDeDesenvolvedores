@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDevCreate));
             this.panel1 = new System.Windows.Forms.Panel();
             this.grpOpt = new System.Windows.Forms.GroupBox();
             this.chkAtv = new System.Windows.Forms.CheckBox();
@@ -42,6 +43,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.grpOpt.SuspendLayout();
             this.SuspendLayout();
@@ -69,12 +71,13 @@
             // grpOpt
             // 
             this.grpOpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.grpOpt.Controls.Add(this.comboBox1);
             this.grpOpt.Controls.Add(this.chkAtv);
             this.grpOpt.Controls.Add(this.chkAdm);
             this.grpOpt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
             this.grpOpt.Location = new System.Drawing.Point(31, 267);
             this.grpOpt.Name = "grpOpt";
-            this.grpOpt.Size = new System.Drawing.Size(370, 74);
+            this.grpOpt.Size = new System.Drawing.Size(370, 65);
             this.grpOpt.TabIndex = 12;
             this.grpOpt.TabStop = false;
             this.grpOpt.Text = "Options:";
@@ -84,7 +87,7 @@
             this.chkAtv.AutoSize = true;
             this.chkAtv.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
             this.chkAtv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
-            this.chkAtv.Location = new System.Drawing.Point(243, 25);
+            this.chkAtv.Location = new System.Drawing.Point(147, 25);
             this.chkAtv.Name = "chkAtv";
             this.chkAtv.Size = new System.Drawing.Size(74, 25);
             this.chkAtv.TabIndex = 11;
@@ -96,7 +99,7 @@
             this.chkAdm.AutoSize = true;
             this.chkAdm.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold);
             this.chkAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
-            this.chkAdm.Location = new System.Drawing.Point(51, 25);
+            this.chkAdm.Location = new System.Drawing.Point(17, 25);
             this.chkAdm.Name = "chkAdm";
             this.chkAdm.Size = new System.Drawing.Size(74, 25);
             this.chkAdm.TabIndex = 10;
@@ -127,6 +130,7 @@
             this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPass.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.SystemColors.Control;
             this.txtPass.Location = new System.Drawing.Point(31, 185);
             this.txtPass.MaxLength = 12;
             this.txtPass.Name = "txtPass";
@@ -139,6 +143,7 @@
             this.txtMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMail.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMail.ForeColor = System.Drawing.SystemColors.Control;
             this.txtMail.Location = new System.Drawing.Point(31, 132);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(370, 26);
@@ -149,6 +154,7 @@
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.ForeColor = System.Drawing.SystemColors.Control;
             this.txtNome.Location = new System.Drawing.Point(31, 79);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(370, 26);
@@ -213,6 +219,20 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "J",
+            "P",
+            "S"});
+            this.comboBox1.Location = new System.Drawing.Point(277, 23);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(74, 29);
+            this.comboBox1.TabIndex = 12;
+            // 
             // FrmDevCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,9 +240,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(461, 424);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDevCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDevCreate";
+            this.Text = "GestãoDeDesenvolvedores";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.grpOpt.ResumeLayout(false);
@@ -247,5 +268,6 @@
         private System.Windows.Forms.CheckBox chkAtv;
         private System.Windows.Forms.CheckBox chkAdm;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

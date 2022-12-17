@@ -32,14 +32,17 @@ namespace GestaoDeDesenvolvedores
                 _senha = ComputeSHA256(value, SALT);
             }
         }
+
         public bool Administrador { get; set; }
         [Required]
         public Developer Desenvolvedor { get; set; }
         public Credential() { }
+
         public static String ComputeSHA256(String input)
         {
             return ComputeSHA256(input, null);
         }
+
         public static String ComputeSHA256(String input, String salt)
         {
             String hash = String.Empty;
@@ -54,6 +57,7 @@ namespace GestaoDeDesenvolvedores
             }
             return hash;
         }
+
         public override String ToString()
         {
             return Id

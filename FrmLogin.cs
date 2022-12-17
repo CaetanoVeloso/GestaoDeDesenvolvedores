@@ -18,6 +18,7 @@ namespace GestaoDeDesenvolvedores
             InitializeComponent();
             Repository repositorio = new Repository();
         }
+
         public static FrmLogin GetInstance()
         {
             if (_instance == null)
@@ -30,21 +31,15 @@ namespace GestaoDeDesenvolvedores
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Credential usuario = CredentialRepository.Autenticar(
-                new Credential()
-                {
-                    Email = txtMail.Text,
-                    Senha = txtPass.Text
-                }
-            );
-            if (usuario != null)
+            Credential dev = CredentialRepository.Autenticar(new Credential(){ Email = txtMail.Text,Senha = txtPass.Text});
+            if (dev != null)
             {
                 txtMail.Text = null;
                 txtPass.Text = null;
                 this.Hide();
-                FrmSystem janelaSistema = FrmSystem.GetInstance();
-                janelaSistema.DesenvolvedorLogado = usuario;
-                janelaSistema.Show();
+                FrmSystem frmSystem = FrmSystem.GetInstance();
+                frmSystem.DesenvolvedorLogado = dev;
+                frmSystem.Show();
             }
             else
             {
