@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GestaoDeDesenvolvedores
 {
     [Table("tbproject")]
-    internal class Project
+    public class Project
     {
         public Int64 Id { get; set; }
         [Required]
@@ -24,5 +24,6 @@ namespace GestaoDeDesenvolvedores
         [Required]
         [Column(TypeName = "Date")]
         public DateTime termino { get; set; }
+        public List<Allocation> Allocations { get; set; }
     }
 }

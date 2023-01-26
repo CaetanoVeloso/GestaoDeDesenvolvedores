@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestaoDeDesenvolvedores
 {
-    internal class ProjRepository
+    public class ProjRepository
     {
         public static void Save(Project project)
         {

@@ -244,7 +244,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDevCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestãoDeDesenvolvedores";
+            this.Text = "Create Account";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.grpOpt.ResumeLayout(false);

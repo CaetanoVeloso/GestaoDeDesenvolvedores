@@ -35,7 +35,7 @@ namespace GestaoDeDesenvolvedores
             Credential newCred = new Credential();
             newDev.Nome = txtNome.Text;
             newDev.Nascimento = dtBirth.Value;
-            newDev.nivel = Convert.ToChar(comboBox1.Text);
+            newDev.Nivel = Convert.ToChar(comboBox1.Text);
             newCred.Email = txtMail.Text;
             newCred.Senha = txtPass.Text;
             newCred.Administrador = chkAdm.Checked;

@@ -100,10 +100,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Allocation.cs" />
+    <Compile Include="AllocationRepository.cs" />
     <Compile Include="Credential.cs" />
     <Compile Include="CredentialRepository.cs" />
     <Compile Include="Developer.cs" />
     <Compile Include="DevRepository.cs" />
+    <Compile Include="FrmAlloc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAlloc.Designer.cs">
+      <DependentUpon>FrmAlloc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,8 +153,12 @@
     <Compile Include="ProjRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
+    <Compile Include="Task.cs" />
     <EmbeddedResource Include="FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAlloc.resx">
+      <DependentUpon>FrmAlloc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDevCreate.resx">
       <DependentUpon>FrmDevCreate.cs</DependentUpon>

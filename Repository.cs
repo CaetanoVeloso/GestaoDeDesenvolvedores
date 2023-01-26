@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace GestaoDeDesenvolvedores
 {
-    internal class Repository : DbContext
+    public class Repository : DbContext
     {
         private static MySqlConnection _databaseConnection;
 
         public DbSet<Developer> Desenvolvedores { get; set; }
         public DbSet<Credential> Credenciais { get; set; }
         public DbSet<Project> Projetos { get; set; }
+        public DbSet<Allocation> Allocations { get; set; }
 
         public Repository() : base(GetDbConnection(), false)
         {
@@ -25,7 +26,7 @@ namespace GestaoDeDesenvolvedores
                 Developer administradorPadrao = new Developer();
                 administradorPadrao.Nome = "DevCaetano";
                 administradorPadrao.Nascimento = new DateTime(2004, 7, 15);
-                administradorPadrao.nivel = 'S';
+                administradorPadrao.Nivel = 'S';
                 Credential credencialPadrao = new Credential();
                 credencialPadrao.Email = "caetano@bl.com";
                 credencialPadrao.Senha = "banca";

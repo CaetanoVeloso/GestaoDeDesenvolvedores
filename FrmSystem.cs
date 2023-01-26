@@ -56,6 +56,7 @@ namespace GestaoDeDesenvolvedores
                 menuStrip1.Enabled = true;
                 projetoToolStripMenuItem.Enabled = true;
                 desenvolvedorToolStripMenuItem.Enabled = true;
+
             }
             else
             {
@@ -82,6 +83,12 @@ namespace GestaoDeDesenvolvedores
         private void FrmSystem_FormClosing(object sender, FormClosingEventArgs e)
         {
             FrmLogin.GetInstance().Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmAlloc.GetInstance().Show();
+
         }
     }
 }

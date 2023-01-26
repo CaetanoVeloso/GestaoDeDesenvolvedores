@@ -16,11 +16,12 @@ namespace GestaoDeDesenvolvedores
         [StringLength(45)]
         public String Nome { get; set; }
         [Required]
-        public Char nivel { get; set; }
+        public Char Nivel { get; set; }
         [Required]
         [Column(TypeName = "Date")]
         public DateTime Nascimento { get; set; }
         public Credential Credential { get; set; }
+        public List<Allocation> Allocations { get; set; }
         public Developer(){}
     }
 }

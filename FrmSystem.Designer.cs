@@ -38,6 +38,7 @@
             this.projetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desenvolvedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +88,8 @@
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.desenvolvedorToolStripMenuItem,
-            this.projetoToolStripMenuItem});
+            this.projetoToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.cadastroToolStripMenuItem.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
@@ -98,7 +100,7 @@
             // 
             this.desenvolvedorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.desenvolvedorToolStripMenuItem.Name = "desenvolvedorToolStripMenuItem";
-            this.desenvolvedorToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.desenvolvedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.desenvolvedorToolStripMenuItem.Text = "Desenvolvedor";
             this.desenvolvedorToolStripMenuItem.Click += new System.EventHandler(this.desenvolvedorToolStripMenuItem_Click);
             // 
@@ -106,7 +108,7 @@
             // 
             this.projetoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.projetoToolStripMenuItem.Name = "projetoToolStripMenuItem";
-            this.projetoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.projetoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.projetoToolStripMenuItem.Text = "Projeto";
             this.projetoToolStripMenuItem.Click += new System.EventHandler(this.projetoToolStripMenuItem_Click);
             // 
@@ -124,8 +126,16 @@
             // 
             this.desenvolvedoresToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.desenvolvedoresToolStripMenuItem.Name = "desenvolvedoresToolStripMenuItem";
-            this.desenvolvedoresToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.desenvolvedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.desenvolvedoresToolStripMenuItem.Text = "Desenvolvedores";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Alocação";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // FrmSystem
             // 
@@ -163,5 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem desenvolvedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem projetoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

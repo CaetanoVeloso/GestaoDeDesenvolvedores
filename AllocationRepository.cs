@@ -7,21 +7,23 @@ using System.Threading.Tasks;
 
 namespace GestaoDeDesenvolvedores
 {
-    public class CredentialRepository
+    public class AllocationRepository
     {
-        public static void Save(Credential cred)
+        public static void Save(Allocation alloc)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    if (cred.Id == 0)
+                    dbContext.Entry(alloc.Developer).State = EntityState.Unchanged;
+                    dbContext.Entry(alloc.Project).State = EntityState.Unchanged;
+                    if (alloc.Id == 0)
                     {
-                        dbContext.Credenciais.Add(cred);
+                        dbContext.Allocations.Add(alloc);
                     }
                     else
                     {
-                        dbContext.Entry(cred).State
+                        dbContext.Entry(alloc).State
                             = EntityState.Modified;
                     }
                     dbContext.SaveChanges();
@@ -30,16 +32,6 @@ namespace GestaoDeDesenvolvedores
             catch (Exception)
             {
                 throw;
-            }
-        }
-
-        public static Credential Autenticar(Credential cred)
-        {
-            using (Repository dbContext = new Repository())
-            {
-                return dbContext.Credenciais
-                    .Where(cr => cr.Email == cred.Email && cr.Senha == cred.Senha)
-                    .SingleOrDefault();
             }
         }
     }
